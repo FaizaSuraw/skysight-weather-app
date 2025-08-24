@@ -1,9 +1,25 @@
-function App() {
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Navbar from "./components/Navbar.jsx";
+import HomePage from "./pages/HomePage.jsx";
+
+const App = () => {
+  const [searchedCity, setSearchedCity] = useState("");
+
+  const handleSearch = (city) => {
+    setSearchedCity(city);
+  };
+
   return (
-    <div className="flex justify-center items-center h-screen bg-blue-100">
-      <h1 className="text-4xl font-bold text-blue-500">SkySight is Ready!</h1>
-    </div>
+    <Router>
+      <Navbar onSearch={handleSearch} />
+
+      <Routes>
+        <Route path="/" element={<HomePage searchedCity={searchedCity} />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
