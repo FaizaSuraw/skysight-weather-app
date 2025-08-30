@@ -1,25 +1,19 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import HomePage from "./pages/HomePage";
 
-import Navbar from "./components/Navbar.jsx";
-import HomePage from "./pages/HomePage.jsx";
-
-const App = () => {
+function App() {
   const [searchedCity, setSearchedCity] = useState("");
-
-  const handleSearch = (city) => {
-    setSearchedCity(city);
-  };
 
   return (
     <Router>
-      <Navbar onSearch={handleSearch} />
-
+      <Navbar onSearch={setSearchedCity} />
       <Routes>
         <Route path="/" element={<HomePage searchedCity={searchedCity} />} />
       </Routes>
     </Router>
   );
-};
+}
 
 export default App;
