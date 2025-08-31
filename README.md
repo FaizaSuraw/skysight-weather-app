@@ -28,16 +28,26 @@ It is built using **React, Vite, and TailwindCSS**, and deployed on **GitHub Pag
 ## 📂 Project Structure
 ---
 SkySight/
+
 ├── public/ # Static assets (icons, manifest, etc.)
 │ └── cloudy.png
+
 ├── src/ # React source code
 │ ├── components/ # Reusable UI components
+
 │ ├── App.jsx # Main App component
+
 │ ├── main.jsx # Entry point
+
 │ └── index.css # TailwindCSS entry
+
 ├── index.html # HTML template
+
 ├── tailwind.config.js # TailwindCSS configuration
+
 ├── vite.config.js # Vite configuration
+
 ├── package.json # Dependencies and scripts
+
 └── README.md # Project documentation
 
