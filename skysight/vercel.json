@@ -1,8 +1,12 @@
 {
   "builds": [
-    { "src": "skysight/package.json", "use": "@vercel/static-build" }
+    {
+      "src": "skysight/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "skysight/dist" }
+    }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "/index.html" }
+    { "src": "/(.*)", "dest": "skysight/dist/index.html" }
   ]
 }
